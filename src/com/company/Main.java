@@ -40,220 +40,223 @@ public class Main {
         System.out.print("Enter your number:  ");
         Number number = new Number(sc.nextLong());
         long n = number.getNumber();
-        if(n==0){
+        if (n == 0) {
             System.out.println("զրո");
-        }
-        int counter = number.counter(n);
+        } else {
 
-        String tiv100 = " հարյուր ";
-        String tiv1000 = " հազար ";
-        String tiv1000000 = " միլիոն ";
-        String tiv1000000000 = " միլիարդ ";
+            int counter = number.counter(n);
 
-        switch (counter) {
-            case 1: {
-                System.out.println(numbers.get(number.getNumber()));
-                break;
-            }
-            case 2: {
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                System.out.println(gumar);
-                break;
-            }
-            case 3: {
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                System.out.println(numbers.get(number.counter3(n)) + " հարյուր "
-                        + gumar);
-                break;
-            }
-            case 4: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
-                }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                String haryuravor = tiv1000 + numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                n = n / 1000;
-                if (number.counter1(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                System.out.println(numbers.get(number.counter1(n)) + haryuravor);
-                break;
-            }
-            case 5: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
-                }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                String haryuravor = numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                n = n / 1000;
-                String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                System.out.println(gumar1 + tiv1000 + haryuravor);
-                break;
-            }
-            case 6: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
-                }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                String haryuravor = numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                n = n / 1000;
-                String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                tiv100 = " հարյուր ";
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                System.out.println(numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor);
-                break;
-            }
-            case 7: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
-                }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                String haryuravor = numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                numbers.put(1L, "մեկ");
-                n = n / 1000;
-                if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
-                    tiv1000 = "";
-                }
-                String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                tiv100 = " հարյուր ";
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                if ((number.counter3(n)) == 0) {
-                    tiv100 = "";
-                }
-                String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
-                n = n / 1000;
-                numbers.put(1L, "մեկ");
-                System.out.println(numbers.get(number.counter1(n)) + tiv1000000 + hazaravor);
-                break;
-            }
-            case 8: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
-                }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                String haryuravor = numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                numbers.put(1L, "մեկ");
-                n = n / 1000;
-                if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
-                    tiv1000 = "";
-                }
-                String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                tiv100 = " հարյուր ";
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                if ((number.counter3(n)) == 0) {
-                    tiv100 = "";
-                }
-                String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
-                n = n / 1000;
-                numbers.put(1L, "մեկ");
-                String gumar2 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                System.out.println(gumar2 + tiv1000000 + hazaravor);
-                break;
-            }
-            case 9: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
-                }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                String haryuravor = numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                numbers.put(1L, "մեկ");
-                n = n / 1000;
-                if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
-                    tiv1000 = "";
-                }
-                String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                tiv100 = " հարյուր ";
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
-                }
-                if ((number.counter3(n)) == 0) {
-                    tiv100 = "";
-                }
+            String tiv100 = " հարյուր ";
+            String tiv1000 = " հազար ";
+            String tiv1000000 = " միլիոն ";
+            String tiv1000000000 = " միլիարդ ";
 
-                String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
-                n = n / 1000;
-                numbers.put(1L, "մեկ");
-                String gumar2 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
+            switch (counter) {
+                case 1: {
+                    numbers.put(0L, "զրո");
+                    System.out.println(numbers.get(number.getNumber()));
+                    break;
                 }
-                tiv100 = " հարյուր ";
-                System.out.println(numbers.get(number.counter3(n)) + tiv100 + gumar2 + tiv1000000 + hazaravor);
-                break;
-            }
-            case 10: {
-                if (number.counter3(n) == 0) {
-                    tiv100 = "";
+                case 2: {
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    System.out.println(gumar);
+                    break;
                 }
-                String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
+                case 3: {
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    System.out.println(numbers.get(number.counter3(n)) + " հարյուր "
+                            + gumar);
+                    break;
                 }
-                String haryuravor = numbers.get(number.counter3(n)) + tiv100
-                        + gumar;
-                numbers.put(1L, "մեկ");
-                n = n / 1000;
-                if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
-                    tiv1000 = "";
+                case 4: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    String haryuravor = tiv1000 + numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    n = n / 1000;
+                    if (number.counter1(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    System.out.println(numbers.get(number.counter1(n)) + haryuravor);
+                    break;
                 }
-                String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                tiv100 = " հարյուր ";
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
+                case 5: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    String haryuravor = numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    n = n / 1000;
+                    String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    System.out.println(gumar1 + tiv1000 + haryuravor);
+                    break;
                 }
-                if ((number.counter3(n)) == 0) {
-                    tiv100 = "";
+                case 6: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    String haryuravor = numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    n = n / 1000;
+                    String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    tiv100 = " հարյուր ";
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    System.out.println(numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor);
+                    break;
                 }
+                case 7: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    String haryuravor = numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    numbers.put(1L, "մեկ");
+                    n = n / 1000;
+                    if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
+                        tiv1000 = "";
+                    }
+                    String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    tiv100 = " հարյուր ";
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    if ((number.counter3(n)) == 0) {
+                        tiv100 = "";
+                    }
+                    String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
+                    n = n / 1000;
+                    numbers.put(1L, "մեկ");
+                    System.out.println(numbers.get(number.counter1(n)) + tiv1000000 + hazaravor);
+                    break;
+                }
+                case 8: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    String haryuravor = numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    numbers.put(1L, "մեկ");
+                    n = n / 1000;
+                    if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
+                        tiv1000 = "";
+                    }
+                    String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    tiv100 = " հարյուր ";
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    if ((number.counter3(n)) == 0) {
+                        tiv100 = "";
+                    }
+                    String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
+                    n = n / 1000;
+                    numbers.put(1L, "մեկ");
+                    String gumar2 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    System.out.println(gumar2 + tiv1000000 + hazaravor);
+                    break;
+                }
+                case 9: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    String haryuravor = numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    numbers.put(1L, "մեկ");
+                    n = n / 1000;
+                    if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
+                        tiv1000 = "";
+                    }
+                    String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    tiv100 = " հարյուր ";
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    if ((number.counter3(n)) == 0) {
+                        tiv100 = "";
+                    }
 
-                String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
-                n = n / 1000;
-                numbers.put(1L, "մեկ");
-                if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
-                    tiv1000000 = "";
+                    String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
+                    n = n / 1000;
+                    numbers.put(1L, "մեկ");
+                    String gumar2 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    tiv100 = " հարյուր ";
+                    System.out.println(numbers.get(number.counter3(n)) + tiv100 + gumar2 + tiv1000000 + hazaravor);
+                    break;
                 }
-                String gumar2 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
-                if (number.counter3(n) == 1) {
-                    numbers.put(1L, "");
+                case 10: {
+                    if (number.counter3(n) == 0) {
+                        tiv100 = "";
+                    }
+                    String gumar = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    String haryuravor = numbers.get(number.counter3(n)) + tiv100
+                            + gumar;
+                    numbers.put(1L, "մեկ");
+                    n = n / 1000;
+                    if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
+                        tiv1000 = "";
+                    }
+                    String gumar1 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    tiv100 = " հարյուր ";
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    if ((number.counter3(n)) == 0) {
+                        tiv100 = "";
+                    }
+
+                    String hazaravor = numbers.get(number.counter3(n)) + tiv100 + gumar1 + tiv1000 + haryuravor;
+                    n = n / 1000;
+                    numbers.put(1L, "մեկ");
+                    if (number.counter1(n) == 0 && number.counter2(n) == 0 && number.counter3(n) == 0) {
+                        tiv1000000 = "";
+                    }
+                    String gumar2 = number.hrashq(numbers.get(number.counter1(n)), numbers.get(number.counter2(n)), counter, n);
+                    if (number.counter3(n) == 1) {
+                        numbers.put(1L, "");
+                    }
+                    tiv100 = " հարյուր ";
+                    if ((number.counter3(n)) == 0) {
+                        tiv100 = "";
+                    }
+                    String milionavor = numbers.get(number.counter3(n)) + tiv100 + gumar2 + tiv1000000 + hazaravor;
+                    n = n / 1000;
+                    numbers.put(1L, "մեկ");
+                    System.out.println(numbers.get(number.counter1(n)) + tiv1000000000 + milionavor);
+                    break;
                 }
-                tiv100 = " հարյուր ";
-                if ((number.counter3(n)) == 0) {
-                    tiv100 = "";
+                default: {
+                    System.out.println("You can't input this number.");
                 }
-                String milionavor = numbers.get(number.counter3(n)) + tiv100 + gumar2 + tiv1000000 + hazaravor;
-                n = n / 1000;
-                numbers.put(1L, "մեկ");
-                System.out.println(numbers.get(number.counter1(n)) + tiv1000000000 + milionavor);
-                break;
-            }
-            default: {
-                System.out.println("You can't input this number.");
             }
         }
     }
